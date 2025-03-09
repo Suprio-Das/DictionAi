@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
+    const [meaning, setMeaning] = useState([]);
     const handleSearch = (e) => {
         e.preventDefault();
         const form = e.target;
-        const word = form.word.value;
-        console.log(word)
+        const searchedWord = form.word.value;
+        const word = searchedWord.toLowerCase();
+        console.log(word);
     }
     return (
         <div className='my-5'>
