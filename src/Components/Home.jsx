@@ -36,13 +36,13 @@ const Home = () => {
                 <div>
                     <input
                         type="text"
-                        className="input rounded-lg w-2/5 h-[50px] block mx-auto focus:border-0"
+                        className="input rounded-lg lg:w-2/5 w-full h-[50px] block mx-auto focus:border-0"
                         name="word"
                         placeholder='Search your words here...'
                         required
                     />
                 </div>
-                <button className="btn btn-neutral h-[50px] w-2/5 block mx-auto" type='submit'>
+                <button className="btn btn-neutral h-[50px] lg:w-2/5 w-full block mx-auto" type='submit'>
                     Search
                 </button>
             </form>
