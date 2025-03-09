@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react';
 
 const Home = () => {
     const [meaning, setMeaning] = useState([]);
+    const [word, setWord] = useState([]);
     const handleSearch = (e) => {
         e.preventDefault();
         const form = e.target;
         const searchedWord = form.word.value;
         const word = searchedWord.toLowerCase();
-        console.log(word);
+        // console.log(word);
+        setWord(word);
     }
+    useEffect(() => {
+        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+            .then(res => res.json())
+            .then(data => setMeaning(data))
+    }, [word])
+    console.log(meaning);
     return (
         <div className='my-5'>
             {/* Search Bar */}
